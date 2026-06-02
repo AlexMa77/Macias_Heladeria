@@ -73,7 +73,7 @@
               { "key": "Authorization", "value": "Bearer {{accessToken}}" }
             ],
             "url": { "raw": "{{baseUrl}}/api/helados/", "host": ["{{baseUrl}}"], "path": ["api","helados",""] },
-            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Helado\",\n  \"precio\": 35.00,\n  \"activo\": true\n}" }
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Helado\",\n  \"precio\": 3.00,\n  \"activo\": true\n}" }
           }
         }
       ]
@@ -97,7 +97,7 @@
               { "key": "Authorization", "value": "Bearer {{accessToken}}" }
             ],
             "url": { "raw": "{{baseUrl}}/api/clientes/", "host": ["{{baseUrl}}"], "path": ["api","clientes",""] },
-            "body": { "mode": "raw", "raw": "{\n  \"helado\": 1,\n  \"nombre\": \"Carlos Pérez\",\n  \"cedula\": \"1712345678\",\n  \"dias_atraso\": 0,\n  \"activo\": true\n}" }
+            "body": { "mode": "raw", "raw": "{\n  \"helado\": 1,\n  \"nombre\": \"Carlos Pérez\",\n}" }
           }
         }
       ]

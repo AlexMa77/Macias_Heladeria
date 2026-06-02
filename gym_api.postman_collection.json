@@ -54,26 +54,26 @@
       ]
     },
     {
-      "name": "Postgres — Planes",
+      "name": "Postgres — Helados",
       "item": [
         {
-          "name": "List planes — GET /api/planes/",
+          "name": "List helados — GET /api/helados/",
           "request": {
             "method": "GET",
             "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
-            "url": { "raw": "{{baseUrl}}/api/planes/", "host": ["{{baseUrl}}"], "path": ["api","planes",""] }
+            "url": { "raw": "{{baseUrl}}/api/helados/", "host": ["{{baseUrl}}"], "path": ["api","helados",""] }
           }
         },
         {
-          "name": "Create plan — POST /api/planes/",
+          "name": "Create helado — POST /api/helados/",
           "request": {
             "method": "POST",
             "header": [
               { "key": "Content-Type",  "value": "application/json" },
               { "key": "Authorization", "value": "Bearer {{accessToken}}" }
             ],
-            "url": { "raw": "{{baseUrl}}/api/planes/", "host": ["{{baseUrl}}"], "path": ["api","planes",""] },
-            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Plan Mensual\",\n  \"precio\": 35.00,\n  \"activo\": true\n}" }
+            "url": { "raw": "{{baseUrl}}/api/helados/", "host": ["{{baseUrl}}"], "path": ["api","helados",""] },
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Helado\",\n  \"precio\": 35.00,\n  \"activo\": true\n}" }
           }
         }
       ]
@@ -89,7 +89,7 @@
           }
         },
         {
-          "name": "Create socio (Admin) — POST /api/clientes/",
+          "name": "Create cliente (Admin) — POST /api/clientes/",
           "request": {
             "method": "POST",
             "header": [
@@ -97,7 +97,7 @@
               { "key": "Authorization", "value": "Bearer {{accessToken}}" }
             ],
             "url": { "raw": "{{baseUrl}}/api/clientes/", "host": ["{{baseUrl}}"], "path": ["api","clientes",""] },
-            "body": { "mode": "raw", "raw": "{\n  \"plan\": 1,\n  \"nombre\": \"Carlos Pérez\",\n  \"cedula\": \"1712345678\",\n  \"dias_atraso\": 0,\n  \"activo\": true\n}" }
+            "body": { "mode": "raw", "raw": "{\n  \"helado\": 1,\n  \"nombre\": \"Carlos Pérez\",\n  \"cedula\": \"1712345678\",\n  \"dias_atraso\": 0,\n  \"activo\": true\n}" }
           }
         }
       ]

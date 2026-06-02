@@ -1,19 +1,19 @@
 from rest_framework import serializers
-from .models import Plan, Cliente
+from .models import Helado, Cliente
 
-class PlanSerializer(serializers.ModelSerializer):
+class HeladoSerializer(serializers.ModelSerializer):
     total_clientes = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
-        model  = Plan
+        model  = Helado
         fields = ["id", "nombre", "precio", "activo", "total_clientes"]
 
     def get_total_clientes(self, obj):
         return obj.clientes.filter(activo=True).count()
 
 class ClienteSerializer(serializers.ModelSerializer):
-    plan_nombre = serializers.CharField(source='plan.nombre', read_only=True)
+    helado_nombre = serializers.CharField(source='helado.nombre', read_only=True)
 
     class Meta:
         model  = Cliente
-        fields = ["id", "plan", "plan_nombre", "nombre", "cedula", "dias_atraso", "activo", "creado_en"]
+        fields = ["id", "helado", "helado_nombre", "nombre", "cedula", "dias_atraso", "activo", "creado_en"]

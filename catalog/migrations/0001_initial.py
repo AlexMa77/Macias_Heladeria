@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Plan",
+            name="Helado",
             fields=[
                 (
                     "id",
@@ -46,11 +46,11 @@ class Migration(migrations.Migration):
                 ("activo", models.BooleanField(default=True)),
                 ("creado_en", models.DateTimeField(auto_now_add=True)),
                 (
-                    "plan",
+                    "helado",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
                         related_name="clientes",
-                        to="catalog.plan",
+                        to="catalog.helado",
                     ),
                 ),
             ],

@@ -1,20 +1,19 @@
 from rest_framework import serializers
-from .models import Plan, Socio
+from .models import Plan, Cliente
 
 class PlanSerializer(serializers.ModelSerializer):
-    total_socios = serializers.SerializerMethodField(read_only=True)
+    total_clientes = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model  = Plan
-        fields = ["id", "nombre", "precio", "activo", "total_socios"]
+        fields = ["id", "nombre", "precio", "activo", "total_clientes"]
 
-    def get_total_socios(self, obj):
-        return obj.socios.filter(activo=True).count()
+    def get_total_clientes(self, obj):
+        return obj.clientes.filter(activo=True).count()
 
-class SocioSerializer(serializers.ModelSerializer):
-    plan_nombre = serializers.CharField(source="plan.nombre", read_only=True)
+class ClienteSerializer(serializers.ModelSerializer):
+    plan_nombre = serializers.CharField(source='plan.nombre', read_only=True)
 
     class Meta:
-        model  = Socio
-        fields = ["id", "plan", "plan_nombre", "nombre", "cedula",
-                  "dias_atraso", "activo", "creado_en"]
+        model  = Cliente
+        fields = ["id", "plan", "plan_nombre", "nombre", "cedula", "dias_atraso", "activo", "creado_en"]

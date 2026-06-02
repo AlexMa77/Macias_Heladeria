@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name="Socio",
+            name="Cliente",
             fields=[
                 (
                     "id",
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                     "plan",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="socios",
+                        related_name="clientes",
                         to="catalog.plan",
                     ),
                 ),

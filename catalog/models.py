@@ -9,7 +9,7 @@ class Plan(models.Model):
         return self.nombre
 
 class Socio(models.Model):
-    plan        = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name="socios")
+    plan        = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name="clientes")
     nombre      = models.CharField(max_length=180)
     cedula      = models.CharField(max_length=20, unique=True)
     dias_atraso = models.IntegerField(default=0)
